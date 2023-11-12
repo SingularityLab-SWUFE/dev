@@ -7,7 +7,7 @@ export default [
             {
                 path: '',
                 name: 'home_page',
-                component: () => import('@/views/home_page.vue'),
+                component: () => import('@/views/ojHome.vue'),
                 meta: {
                     title: '首页',
                     keepAlive: true, // 需要被缓存
