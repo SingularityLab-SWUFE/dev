@@ -7,6 +7,7 @@
         @select="handleSelect"  >
         <div class="navMessage">SWUFEOJ</div>
       <div class="navLink">
+
         <router-link to="/ojHome">
 <!--            <el-image class="svg-icon" src="@/assests/img/home.png" alt="Home"></el-image>-->
             <el-menu-item index="1"  class="custom-font">Home</el-menu-item>
