@@ -5,7 +5,7 @@
         class="el-menu-demo navMenu"
         mode="horizontal"
         @select="handleSelect"  >
-        <div class="navMessage"> SWUFEOJ </div>
+        <div class="navMessage">SWUFEOJ </div>
       <div class="navLink">
 
         <router-link to="/ojHome">
