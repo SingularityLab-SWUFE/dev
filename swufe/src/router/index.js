@@ -7,7 +7,6 @@ const routes = [
   { path: '/ojHome', component: Home },
   { path: '/ojProblems', component: Problems },
 ];
-
 const router = createRouter({
   history: createWebHistory(),
   routes,

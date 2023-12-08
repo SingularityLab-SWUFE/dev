@@ -1,20 +1,22 @@
 <template>
-    <headerNav/>
-<!--  <img alt="Vue logo" src="./assets/logo.png">-->
-<!--  <HelloWorld msg="Welcome to Your Vue.js App"/>-->
-<!--  <el-button type="primary" @click="handleClick">dfsgfsvf</el-button>-->
+    <header-nav></header-nav>
   <router-view/>
 </template>
 
 <script>
 // import HelloWorld from './components/HelloWorld.vue';
+
+
+
+
 import HeaderNav from "@/components/headerNav.vue";
+
 export default {
   name: 'App',
-  components: {
+    components: {HeaderNav},
 
-    HeaderNav
-  },
+
+
   methods: {
     handleClick: function (e) {
       console.log('click', e)
@@ -26,7 +28,7 @@ export default {
 <style>
 
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-family: Avenir, Helvetica, Arial, sans-serif,fengye;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;

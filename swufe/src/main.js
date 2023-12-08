@@ -6,11 +6,14 @@ import ElementPlus from 'element-plus'
 import 'element-plus/dist/index.css'
 // 自定义全局样式
 import './assets/CSS/styles.css'
+import BaiduCalendar from "vue-baidu-calendar"
+import './assets/font/Liquid-Crystal/Liquid-Crystal/font.css'
 
 const app = createApp(App)
 // app.use(store)
 app.use(router)
 app.use(ElementPlus)
+app.use(BaiduCalendar)
 app.mount('#app')
 
 // 照搬
