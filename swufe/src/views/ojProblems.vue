@@ -1,10 +1,16 @@
 <template>
-<div>Problems333333333333333</div>
+
+    <headerNav/>
+
 </template>
 
 <script>
+import HeaderNav from "@/components/headerNav.vue";
+
+
 export default {
-    name: "ojProblems.vue"
+    name: "ojProblems.vue",
+    components: {HeaderNav}
 }
 </script>
 
