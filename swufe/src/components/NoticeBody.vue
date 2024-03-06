@@ -172,7 +172,7 @@
                 <div class="bodylefttop1">
                     <div class="bodylefttoppic1">
                         <h3 class="u3">
-                            <img src="/src/components/img/通知/黑铃铛.svg" class="bodylefttoppic2">
+                            <img src="/src/assets/img/通知/黑铃铛.svg" class="bodylefttoppic2">
                         </h3>
                     </div>
                     <div class="bodylefttopword1">
@@ -220,7 +220,7 @@
                 <div class="bodyleftback1">
                     <div class="bodyleftback2">
                         <h2>
-                            <img src="/src/components/img/返回箭头.svg" class="bodyleftbackpic">
+                            <img src="/src/assets/img/返回箭头.svg" class="bodyleftbackpic">
                         </h2>
                     </div>
                 </div>

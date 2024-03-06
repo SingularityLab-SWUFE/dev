@@ -145,17 +145,17 @@
         <div class="guidepic1">
             <div class="u2">
                 <h3 class="h3a">
-                    <img src="/src/components/img/导航栏/搜索-导航栏.svg" class="pic">
+                    <img src="/src/assets/img/导航栏/搜索-导航栏.svg" class="pic">
                 </h3>
             </div>
             <div class="u2">
                 <h3 class="h3a">
-                    <img src="/src/components/img/导航栏/通知-导航栏.svg" class="pic">
+                    <img src="/src/assets/img/导航栏/通知-导航栏.svg" class="pic">
                 </h3>
             </div>
             <div class="u2">
                 <h3 class="h3a">
-                    <img src="/src/components/img/导航栏/头像-导航栏.svg" class="pic">
+                    <img src="/src/assets/img/导航栏/头像-导航栏.svg" class="pic">
                 </h3>
             </div>
         </div>
