@@ -1,0 +1,33 @@
+/* 背景灰色 */
+/* 使用 beforeCreate 函数，找不到可以全局搜索 */
+
+/* 白色块 */
+.card { 
+    margin-top: 30px; 
+    margin-bottom: 30px; 
+    background: #FFFFFF; 
+    border-radius: 20px; 
+} 
+
+/* 文本样式 */
+.left{ 
+    text-align: left; 
+} 
+.right{ 
+    text-align: right; 
+} 
+.center{ 
+    text-align: center; 
+}
+
+/*图片与文字垂直居中*/ 
+.center-vertically{ 
+    display: flex; 
+    align-items: center; 
+    vertical-align: middle; 
+}
+
+/* 鼠标悬浮变成手 */
+.hand{ 
+    cursor: pointer; 
+} 

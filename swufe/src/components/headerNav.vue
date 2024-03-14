@@ -1,18 +1,18 @@
 <template>
     <div class="navbar">
-        <router-link to="/ojHome" class="nav-link" :class="{ active: activeIndex === '1' }">
+        <router-link to="/home_page" class="nav-link" :class="{ active: activeIndex === '1' }">
             首页
         </router-link>
-        <router-link to="ojProblems" class="nav-link" :class="{ active: activeIndex === '2' }">
+        <router-link to="/problem_set" class="nav-link" :class="{ active: activeIndex === '2' }">
             题库
         </router-link>
-        <router-link to="contests" class="nav-link" :class="{ active: activeIndex === '3' }">
+        <router-link to="/contests" class="nav-link" :class="{ active: activeIndex === '3' }">
             比赛
         </router-link>
-        <router-link to="status" class="nav-link" :class="{ active: activeIndex === '4' }">
+        <router-link to="/status" class="nav-link" :class="{ active: activeIndex === '4' }">
             记录
         </router-link>
-        <router-link to="rank" class="nav-link" :class="{ active: activeIndex === '5' }">
+        <router-link to="/rank" class="nav-link" :class="{ active: activeIndex === '5' }">
             讨论
         </router-link>
         <ul class="nav-image">
@@ -26,10 +26,6 @@
                 <img src="@/assets/img/首页/图标/未登录.svg" alt="" />
             </li>
         </ul>
-
-
-
-
     </div>
 </template>
 
