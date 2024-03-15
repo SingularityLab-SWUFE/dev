@@ -17,13 +17,19 @@
         </router-link>
         <ul class="nav-image">
             <li class="img1">
+                <router-link to="#"  :class = "{ active: activeIndex === '6'}">
                 <img src="@/assets/img/首页/图标/未搜索.svg" alt="" />
+                </router-link>
             </li>
             <li class="img2">
+                <router-link to="#" :class = "{ active: activeIndex === '7'}">
                 <img src="@/assets/img/首页/图标/未查看提醒.svg" alt="" />
+                </router-link>
             </li>
             <li class="img3">
+                <router-link to="/student_info" :class = "{ active: activeIndex === '8'}">
                 <img src="@/assets/img/首页/图标/未登录.svg" alt="" />
+                </router-link>
             </li>
         </ul>
     </div>
