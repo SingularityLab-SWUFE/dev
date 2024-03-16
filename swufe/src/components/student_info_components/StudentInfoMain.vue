@@ -1,7 +1,11 @@
 <template>
-  <div>
-      我是主体组件
-  </div>
+    <div class="common-layout">
+        <el-container>
+            <el-header style="background-color: aqua">Header</el-header>
+            <el-main style="background-color: red"><router-view>我是组件</router-view></el-main>
+        </el-container>
+    </div>
+
 </template>
 
 <script>
