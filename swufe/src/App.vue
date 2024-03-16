@@ -1,6 +1,6 @@
 <template>
     <header-nav></header-nav>
-  <router-view/>
+    <router-view/>
 </template>
 
 <script>

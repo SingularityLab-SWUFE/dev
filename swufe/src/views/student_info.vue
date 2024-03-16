@@ -2,8 +2,8 @@
     <div class="main">
     <el-row :gutter="0">
         <el-col :span="22" :offset="1">
-            <StudentInfoHeader></StudentInfoHeader>
-            <StudentInfoMain></StudentInfoMain>
+            <StudentInfoHeader class="student-header"></StudentInfoHeader>
+            <StudentInfoMain class="student-Main"></StudentInfoMain>
         </el-col>
     </el-row>
     </div>
@@ -29,7 +29,14 @@ body{
     background-color: #f2f2f2;
 }
 .main{
-    height: 1030px;
     background-color: #f2f2f2;
+}
+.student-header{
+    margin-top: 4%;
+}
+.student-Main{
+    margin-top: 6%;
+    border-radius: 2%;
+    margin-bottom: 3%;
 }
 </style>

@@ -1,3 +1,4 @@
+
 export default [
     {
         path: '/',
@@ -32,25 +33,14 @@ export default [
                 }
             },
             {
-                path: '',
+                path: 'student_info',
                 name: 'student_info',
                 component: () => import('@/views/student_info.vue'),
                 meta: {
                     title: '用户中心',
                     keepAlive: true, // 需要被缓存
                 },
-                children :[
-                    {
-                        path: '',
-                        name: 'InfoMainHome',
-                        component: () => import('@/components/student_info_components/Main_components/InfoMainHome.vue'),
-                        meta: {
-                            title: '用户信息首页',
-                            keepAlive: true, // 需要被缓存
-                        }
-                    },
 
-                ]
             },
         ]
     }
