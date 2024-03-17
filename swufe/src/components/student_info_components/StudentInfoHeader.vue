@@ -38,7 +38,7 @@
                         <el-col :span="18" :offset="1" class="form-item">
                                 <div class="form-item-box" >
                                     <span v-show="!UserInfo.IsEdit" class="from-input" style="width: 90%">现居地：        {{UserInfo.Location}}</span>
-                                    <label v-show="UserInfo.IsEdit" class="from-input" style="width: 90%">现居地：       <input  class="from-input input-selected" type="text" v-model="UserInfo.Location" style="width: 90%;vertical-align: baseline" /></label>
+                                    <label v-show="UserInfo.IsEdit" class="from-input" style="width: 95%">现居地：       <input  class="from-input input-selected" type="text" v-model="UserInfo.Location" style="width: 80%;vertical-align: baseline" /></label>
                                 </div>
                         </el-col>
                     </el-row>
