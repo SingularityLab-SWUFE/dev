@@ -1,11 +1,24 @@
-
 //需要先导入axios
 //get和post请求发给后端的数据的变量名需与后端需求的相同
 import axios from 'axios';
-const baseURL=''//接口地址头,待填充
+// 请求时弹出的盒子
+import { ElMessageBox } from 'element-plus';
+import '../assets/CSS/MessageBox.css';
+
+
+// 创建axios实例
+// const baseURL=''//接口地址头,待填充
 const service = axios.create({
-  baseURL: baseURL,
+  // baseURL: baseURL,
+  timeout: 15000,
+  // 默认请求头
+  headers: {
+    'Content-Type': 'application/json;charset=UTF-8',
+  },
+  // 跨域请求时是否需要使用凭证
+  withCredentials: true,
 });
+
 
 // 添加请求拦截器
 service.interceptors.request.use(
@@ -23,6 +36,67 @@ service.interceptors.request.use(
     return Promise.reject(error);
   }
 );
+
+
+// response拦截器
+service.interceptors.response.use(
+  response => {
+      // code为非200时抛错
+      const res = response.data
+      // console.log(res)
+      let sign = response.headers['x-cda-redirect-login-sign'];
+
+      // 用户已经登录（由sign变量是否定义来判断）的情况下，重定向用户到一个新的URL。
+      if (sign !== undefined) {
+        let loginRedirectUrl = response.data.content;
+        window.open(loginRedirectUrl, "_self" )
+      } 
+      else {
+        // 我们自定义返回状态码和信息
+        // if (res.code !== '200' && res.code !== 20000) {
+        if (res.code !== '200') {
+          console.log('res.code:' + res.code + ',res.msg:' + res.msg)
+          // 出现500000时要刷新，自定义的错误码
+          if(res.code == '500000'){
+              ElMessageBox.alert(res.msg, '失败', {
+                confirmButtonText: '确定',
+                customClass: 'AlertBox',
+                callback: action => {
+                  if (action === 'confirm') {
+                      // 在点击确认按钮后刷新页面
+                      location.reload();
+                  }
+                }
+              })
+          } else {
+            if(res.msg === undefined){
+              ElMessageBox.alert('res.code:'+res.code, "未知错误", {
+                confirmButtonText: '确定',
+                customClass: 'AlertBox',
+              });
+            } else{
+              ElMessageBox.alert(res.msg, "失败", {
+                confirmButtonText: '确定',
+                customClass: 'AlertBox',
+              });
+            }
+          }
+          // window.alert(res.msg)
+            return Promise.reject('error')
+        } else {
+              return response.data
+        }
+      }
+  },
+  error => {
+      if (error.response.status === 401) {
+          window.location.href = error.response.headers.location
+          return
+      }
+      return Promise.reject(error)
+  }
+)
+
 
 export default service;
 
