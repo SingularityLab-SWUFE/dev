@@ -24,9 +24,9 @@ export default [
                 }
             },
             {
-                path: '/competition_details',
-                name: 'competition_details',
-                component: () => import('@/views/competition_details.vue'),
+                path: '/problem_details',
+                name: 'problem_details',
+                component: () => import('@/views/problem_details.vue'),
                 meta: {
                     title: '题目详情',
                     keepAlive: true, // 需要被缓存
