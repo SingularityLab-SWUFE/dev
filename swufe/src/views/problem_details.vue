@@ -19,8 +19,8 @@
       <p id="title_text" class="text">题目描述</p>
     </div>
     <div id="content" class="cardbox_1">
-      <p id="content_text" class="text">
-        <el-text class="mx-1">
+      <el-row id="content_text" class="text">
+        <!-- <el-text class="mx-1">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit.Aenean euismod
           bibendum laoreet.Proin gravida dolor sit amet lacus accumsan et
           viverra justo commodo.Proin sodales pulvinar tempor.Cum sociis natoque
@@ -30,32 +30,46 @@
           amet,consectetur adipiscing elit.Aenean euismod bibendum laoreet.Proin
           gravida dolor sit amet lacus accumsan et viverra justo commodo.Proin
           sodales pulvinar tempor.Cum sociis natoque penatibus et magnis dis
-        </el-text>
-      </p>
+        </el-text> -->
+
+        <!-- 绑定数据 -->
+        <template  v-slot="scope">
+          {{ scope.row.description }}
+        </template>
+      </el-row>
     </div>
     <div id="title1" class="cardbox_1">
       <p id="title_text" class="text">输入</p>
     </div>
     <div id="content1" class="cardbox_1">
-      <p id="content_text" class="text">
-        <el-text class="mx-1">一个整数x</el-text>
-      </p>
+      <el-row id="content_text" class="text">
+        <!-- <el-text class="mx-1">一个整数x</el-text> -->
+        <template  v-slot="scope">
+          {{ scope.row.input }}
+        </template>
+      </el-row>
     </div>
     <div id="title2" class="cardbox_1">
       <p id="title_text" class="text">输出</p>
     </div>
     <div id="content2" class="cardbox_1">
-      <p id="content_text" class="text">
-        <el-text class="mx-1">x反转后的结果</el-text>
-      </p>
+      <el-row id="content_text" class="text">
+        <!-- <el-text class="mx-1">x反转后的结果</el-text> -->
+        <template  v-slot="scope">
+          {{ scope.row.output }}
+        </template>
+      </el-row>
     </div>
     <div id="sample1" class="cardbox_1">
       <p id="title_text" class="text">输入样例</p>
     </div>
     <div id="samplecontent1" class="cardbox_1">
-      <p id="content_text" class="text">
-        <el-text class="mx-1">x=123</el-text>
-      </p>
+      <el-row id="content_text" class="text">
+        <!-- <el-text class="mx-1">x=123</el-text> -->
+        <template  v-slot="scope">
+          {{ scope.row.samples }}
+        </template>
+      </el-row>
     </div>
     <div id="sample2" class="cardbox_1">
       <p id="title_text" class="text">输出样例</p>
@@ -183,9 +197,38 @@
   </div>
 </template>
 <script>
+import HeaderNav from "@/components/headerNav.vue";
+import { he } from "element-plus/es/locale";
 import { ref } from "vue";
+import {useStore} from "vuex";
+
 
 export default {
+  name: "ProblemDetails",
+  components: {HeaderNav},
+
+  data() {
+    return {
+    };
+  },
+  computed: {
+    // 题目描述
+    problem_desc(){
+      if(typeof this.$store.getters.problemData.description !== 'undefined'){
+        return this.$store.getters.problemData.description}
+      return ''
+    },
+    
+  },
+  methods: {
+    // 触发数据获取动作
+    mounted() {
+    const store = useStore()
+    // 触发数据获取动作
+    store.dispatch('problemSet/useProblemData', this.problemID)
+  },
+  },
+  //实例创建之前钩子，设置body标签的属性style
   beforeCreate() {
     this.$nextTick(() => {
       document.body.setAttribute(
@@ -194,19 +237,13 @@ export default {
       );
     });
   },
-  //实例销毁之前钩子，移除body标签的属性style
+  //实例销毁之前钩子，删除body标签的属性style
   beforeUnmount() {
     document.body.removeAttribute("style");
   },
-
-  data() {
-    return {
-      textarea: ref(""),
-      value: ref(""),
-    };
-  },
 };
 </script>
+
 <style>
 body {
   margin: 0px;
